@@ -1,0 +1,398 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    height: 100%; /* Ensures footer placement */
+}
+
+/* Body Layout */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Footer at the bottom */
+    background-color: #f4fdfb; /* Subtle mint background */
+    min-height: 100vh;
+}
+
+/* Navbar Styling */
+header nav {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Vertically align all child elements (logo and links) */
+    justify-content: space-between; /* Space between logo and links */
+    background-color: #c1e8e2; /* Pastel blue background */
+    padding: 0 10px; /* Reduce padding on left and right */
+    height: 70px; /* Set a fixed height for the navbar */
+    position: relative; /* Positioning for absolute centering of <ul> */
+}
+
+/* Logo Styling */
+header nav .logo {
+    height: 100%; /* Match the height of the navbar */
+    display: flex; /* Ensure proper alignment */
+    align-items: center; /* Vertically center logo */
+}
+
+header nav .logo img {
+    height: 100%; /* Logo height matches navbar height */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Center Navigation Links */
+header nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Use flexbox for horizontal alignment */
+    gap: 30px; /* Space between links */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    align-items: center; /* Vertically align links with the logo */
+    position: absolute; /* Make the <ul> independent of flexbox alignment */
+    left: 50%; /* Start from the horizontal center */
+    transform: translateX(-50%); /* Center the <ul> */
+    top: 50%; /* Start from the vertical center */
+    transform: translate(-50%, -50%); /* Perfectly center <ul> in both axes */
+}
+
+/* Navbar Links */
+header nav ul li a {
+    text-decoration: none;
+    color: #000; /* Black text for links */
+    font-size: 1.4rem; /* Increase font size for bigger text */
+    line-height: 30px; /* Match the navbar height (same as navbar's height: 70px) */
+    padding: 0 15px; /* Add horizontal padding for clickable area */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #88c9d8; /* Lighter blue on hover */
+}
+
+/* Dropdown Styling */
+.dropdown-container {
+    position: relative; /* Parent container needs relative positioning */
+}
+
+.dropdown-container a {
+    display: inline-block; /* Ensure anchor tags behave like block elements for proper alignment */
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #000; /* Black link text */
+    padding: 5px 15px; /* Adds padding for clickable area */
+
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-container a:hover {
+    background-color: #88c9d8; /* Light blue background on hover */
+}
+
+/* Dropdown Styling */
+.dropdown {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to the parent link */
+    left: 0; /* Align dropdown with the left edge of the parent link */
+    margin-top: 90px; /* Add a gap between the link and the dropdown */
+    background-color: #fdcdd3; /* Pink dropdown background */
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    list-style: none; /* Remove bullet points */
+    z-index: 1000; /* Ensure dropdown appears above all other content */
+    width: 200px; /* Fixed width for the dropdown */
+}
+
+
+/* Show Dropdown on Hover */
+.dropdown-container:hover .dropdown {
+    display: block; /* Reveal the dropdown when hovering over the parent */
+}
+
+
+/* Dropdown Items */
+.dropdown li {
+    margin: 2px 0; /* Further reduce vertical spacing between items */
+}
+
+.dropdown li a {
+    text-decoration: none;
+    color: #000; /* Black text */
+    display: block;
+    padding: 5px 10px; /* Add padding for clickable area */
+    font-size: 1rem; /* Smaller text size for dropdown items */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+.dropdown li a:hover {
+    background-color: #ffc2cc; /* Light pink hover effect */
+}
+
+
+/* Header Settings*/
+#ph h1 {text-align: center;}
+
+/* Footer */
+footer {
+    background-color: #c1e8e2; /* Matches navigation bar */
+    padding: 20px 40px; /* Add consistent padding */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out content horizontally */
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Contacts Section */
+footer .contacts {
+    display: flex; /* Align items horizontally */
+    gap: 20px; /* Space between email and phone number */
+    align-items: center; /* Ensure they align vertically */
+    color: #004d40; /* Dark teal text */
+    font-size: 1rem; /* Slightly larger font size for better readability */
+}
+
+/* Copyright Text */
+footer p {
+    flex: 1; /* Allow it to grow evenly */
+    text-align: center; /* Center-align the copyright */
+    font-size: 0.9rem; /* Match font size with contacts */
+    color: #004d40; /* Dark teal text */
+    margin: 0; /* Remove extra spacing */
+}
+
+/* Social Media Section */
+footer .socials {
+    display: flex; /* Align icons horizontally */
+    justify-content: flex-end; /* Align icons to the right */
+    gap: 20px; /* Space between icons */
+}
+
+footer .socials img {
+    width: 45px; /* Slightly larger icon size */
+    height: 45px; /* Maintain square aspect ratio */
+    transition: transform 0.2s ease-in-out; /* Add hover effect */
+}
+
+footer .socials img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+/* Hero Section Styling */
+#hero {
+    display: flex; /* Align text and image side by side */
+    flex-direction: row; /* Default direction */
+    align-items: center; /* Center-align the items vertically */
+    justify-content: space-between; /* Space between text and image */
+    padding: 20px; /* Add spacing around the section */
+    max-width: 1200px; /* Limit the width of the section */
+    margin: 0 auto; /* Center the section horizontally */
+    gap: 20px; /* Add space between text and image */
+}
+
+/* Text Section */
+#hero h1 {
+    font-size: 2.5rem;
+    color: #004d40; /* Match brand color */
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 600px; /* Increase text width */
+    margin: 0;
+}
+
+/* Circular Image */
+#hero img {
+    border-radius: 50%; /* Make the image circular */
+    width: 300px; /* Set a smaller width for the image */
+    height: 300px; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image fills the circular frame */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+
+
+
+
+/* About Section Styling */
+#about {
+    text-align: center;
+    padding: 50px 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#about h1 {
+    font-size: 2.5em;
+    color: #004d40; /* Dark teal */
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.about-content img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    background-color: #f4f4f4; /* Placeholder background */
+}
+
+.about-content p {
+    max-width: 600px;
+    font-size: 1.2em;
+    color: #555555;
+    line-height: 1.6;
+    text-align: left;
+}
+/* Products Section Styling */
+#products {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+s
+#products h1 {
+    font-size: 2.5em;
+    color: #004d40; /* Dark teal for heading */
+    margin-bottom: 20px;
+}
+
+/* Grid Layout for Products */
+#products {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+    gap: 20px; /* Space between items */
+    justify-items: center; /* Center items within their grid cells */
+}
+
+/* Individual Product Card */
+#products .product {
+    background-color: #faebe9; /* Light background for products */
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 100%; /* Ensures card adapts to grid cell */
+    max-width: 220px; /* Fixed width for consistent size */
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#products .product:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Product Images */
+#products .product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Slightly rounded corners */
+    margin-bottom: 10px;
+}
+
+/* Product Details */
+#products .product p {
+    margin: 5px 0;
+    color: #333; /* Dark gray for text */
+}
+
+#products .product p.price {
+    font-weight: bold;
+    color: #004d40; /* Dark teal for price */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    #products {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    #products {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+}
+/* Circular Product Images */
+#products .product img {
+    width: 150px; /* Fixed size for uniformity */
+    height: 150px; /* Fixed size for uniformity */
+    object-fit: contain; /* Ensures proper scaling and cropping */
+    overflow: hidden; /* Hides any content outside the circle */
+    margin-bottom: 10px;
+
+
+/* Container for the Circular Image */
+#products .product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Circle diameter */
+    height: 150px; /* Circle diameter */
+    border-radius: 50%; /* Make the container circular */
+    background-color: #FAD6A5; /* Replace this with your desired background color */
+    overflow: hidden; /* Ensures no content spills out of the circle */
+    margin: 0 auto 15px; /* Center circle and add spacing below */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
+}
+
+/* Product Text Styling */
+#products .product p {
+    margin: 5px 0;
+    color: #333; /* Dark gray for text */
+    text-align: center;
+}
+
+#products .product p.price {
+    font-weight: bold;
+    color: #004d40; /* Dark teal for price */
+}
+/* Responsive Header for Smaller Screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and nav links vertically */
+        align-items: center; /* Center items */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Smaller gap between links */
+    }
+
+    .logo img {
+        height: 30px; /* Scale logo for smaller devices */
+    }
+}
+
+/* For Extra Small Screens */
+@media (max-width: 480px) {
+    header nav ul li a {
+        font-size: 0.9rem; /* Smaller text size */
+        padding: 5px; /* Compact padding */
+    }
+
+    .logo img {
+        height: 25px; /* Further scale logo down */
+    }
+}
